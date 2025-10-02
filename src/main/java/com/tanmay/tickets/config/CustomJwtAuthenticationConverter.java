@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
-public class JwtAuthenticationConverter implements Converter<Jwt, JwtAuthenticationToken> {
+public class CustomJwtAuthenticationConverter implements Converter<Jwt, JwtAuthenticationToken> {
 
   @Override
   public JwtAuthenticationToken convert(Jwt jwt) {
