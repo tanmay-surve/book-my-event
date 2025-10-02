@@ -4,6 +4,7 @@ import com.tanmay.tickets.domain.CreateEventRequest;
 import com.tanmay.tickets.domain.CreateTicketTypeRequest;
 import com.tanmay.tickets.domain.dtos.*;
 import com.tanmay.tickets.domain.entities.Event;
+import com.tanmay.tickets.domain.entities.TicketType;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
@@ -15,5 +16,9 @@ public interface EventMapper {
   CreateEventRequest fromDto(CreateEventRequestDto dto);
 
   CreateEventResponseDto toDto(Event event);
+
+  ListEventTicketTypeResponseDto toDto(TicketType ticketType);
+
+  ListEventResponseDto toListEventResponseDto(Event event);
 
 }
