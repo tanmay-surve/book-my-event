@@ -2,6 +2,7 @@ package com.tanmay.tickets.services.impl;
 
 import com.tanmay.tickets.domain.CreateEventRequest;
 import com.tanmay.tickets.domain.entities.TicketType;
+import com.tanmay.tickets.domain.entities.UpdateEventRequest;
 import com.tanmay.tickets.domain.entities.User;
 import com.tanmay.tickets.exceptions.UserNotFoundException;
 import com.tanmay.tickets.repositories.EventRepository;
@@ -13,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 import com.tanmay.tickets.domain.entities.Event;
 
@@ -59,4 +61,20 @@ public class EventServiceImpl implements EventService {
         return eventRepository.findByOrganizerId(organizerId,pageable);
 
     }
+
+    @Override
+    public Optional<Event> getEventForOrganizer(UUID organizerId, UUID id) {
+        return Optional.empty();
+    }
+
+    @Override
+    public Event updateEventForOrganizer(UUID organizerId, UUID id, UpdateEventRequest event) {
+        return null;
+    }
+
+    @Override
+    public Optional<Event> getEventByOrganizerId(UUID organizerId, UUID id) {
+        return eventRepository.findByIdAndOrganizerId(id,organizerId);
+    }
+
 }

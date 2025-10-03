@@ -3,6 +3,7 @@ package com.tanmay.tickets.controller;
 import com.tanmay.tickets.domain.CreateEventRequest;
 import com.tanmay.tickets.domain.dtos.CreateEventRequestDto;
 import com.tanmay.tickets.domain.dtos.CreateEventResponseDto;
+import com.tanmay.tickets.domain.dtos.GetEventDetailsResponseDto;
 import com.tanmay.tickets.domain.dtos.ListEventResponseDto;
 import com.tanmay.tickets.domain.entities.Event;
 import com.tanmay.tickets.mappers.EventMapper;
@@ -50,5 +51,17 @@ public class EventController {
         return ResponseEntity.ok(
                 events.map(eventMapper::toListEventResponseDto)
         );
+    }
+
+    @GetMapping(path = "/{eventId}")
+    public ResponseEntity<GetEventDetailsResponseDto> getEvent(
+            @AuthenticationPrincipal Jwt jwt,
+            @PathVariable UUID eventId
+    ) {
+        UUID userId = parseUserId(jwt);
+        return eventService.getEventForOrganizer(userId, eventId)
+                .map(eventMapper::toGetEventDetailsResponseDto)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 }
