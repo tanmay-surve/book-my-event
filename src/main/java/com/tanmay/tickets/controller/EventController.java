@@ -1,11 +1,9 @@
 package com.tanmay.tickets.controller;
 
 import com.tanmay.tickets.domain.CreateEventRequest;
-import com.tanmay.tickets.domain.dtos.CreateEventRequestDto;
-import com.tanmay.tickets.domain.dtos.CreateEventResponseDto;
-import com.tanmay.tickets.domain.dtos.GetEventDetailsResponseDto;
-import com.tanmay.tickets.domain.dtos.ListEventResponseDto;
+import com.tanmay.tickets.domain.dtos.*;
 import com.tanmay.tickets.domain.entities.Event;
+import com.tanmay.tickets.domain.entities.UpdateEventRequest;
 import com.tanmay.tickets.mappers.EventMapper;
 import com.tanmay.tickets.services.EventService;
 import jakarta.validation.Valid;
@@ -63,5 +61,23 @@ public class EventController {
                 .map(eventMapper::toGetEventDetailsResponseDto)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping(path = "/{eventId}")
+    public ResponseEntity<UpdateEventResponseDto> updateEvent(
+            @AuthenticationPrincipal Jwt jwt,
+            @PathVariable UUID eventId,
+            @Valid @RequestBody UpdateEventRequestDto updateEventRequestDto) {
+        UpdateEventRequest updateEventRequest = eventMapper.fromDto(updateEventRequestDto);
+        UUID userId = parseUserId(jwt);
+
+        Event updatedEvent = eventService.updateEventForOrganizer(
+                userId, eventId, updateEventRequest
+        );
+
+        UpdateEventResponseDto updateEventResponseDto = eventMapper.toUpdateEventResponseDto(
+                updatedEvent);
+
+        return ResponseEntity.ok(updateEventResponseDto);
     }
 }
