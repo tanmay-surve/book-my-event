@@ -1,7 +1,7 @@
-# Book My Ticket
+# Book My Event
 
 ## Overview
-This repository contains the source code for "Book My Ticket," an event ticket platform designed to manage the complete event lifecycle, including event creation, ticket sales, sales monitoring, and ticket validation. The platform serves event organizers, attendees, and staff, providing a comprehensive solution for event management.
+This repository contains the source code for "Book My Event," an event ticket platform designed to manage the complete event lifecycle, including event creation, ticket sales, sales monitoring, and ticket validation. The platform serves event organizers, attendees, and staff, providing a comprehensive solution for event management.
 
 ## Build Plan
 1. **System Design** - Analyze the domain, user personas, UI design, and domain modeling
