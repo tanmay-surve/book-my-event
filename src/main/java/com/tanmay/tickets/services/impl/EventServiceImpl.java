@@ -76,6 +76,12 @@ public class EventServiceImpl implements EventService {
 
     @Override
     @Transactional
+    public void deleteEventForOrganizer(UUID organizerId, UUID id) {
+        getEventForOrganizer(organizerId, id).ifPresent(eventRepository::delete);
+    }
+
+    @Override
+    @Transactional
     public Event updateEventForOrganizer(UUID organizerId, UUID id, UpdateEventRequest event) {
         if (null == event.getId()) {
             throw new EventUpdateException("Event ID cannot be null");
@@ -138,6 +144,21 @@ public class EventServiceImpl implements EventService {
         }
 
         return eventRepository.save(existingEvent);
+    }
+
+    @Override
+    public Page<Event> listPublishedEvents(Pageable pageable) {
+        return eventRepository.findByStatus(EventStatusEnum.PUBLISHED, pageable);
+    }
+
+    @Override
+    public Page<Event> searchPublishedEvents(String query, Pageable pageable) {
+        return eventRepository.searchEvents(query, pageable);
+    }
+
+    @Override
+    public Optional<Event> getPublishedEvent(UUID id) {
+        return eventRepository.findByIdAndStatus(id, EventStatusEnum.PUBLISHED);
     }
 
 }
