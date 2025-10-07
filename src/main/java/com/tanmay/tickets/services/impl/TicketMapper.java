@@ -1,10 +1,10 @@
 package com.tanmay.tickets.services.impl;
 
-import com.devtiro.tickets.domain.dtos.GetTicketResponseDto;
-import com.devtiro.tickets.domain.dtos.ListTicketResponseDto;
-import com.devtiro.tickets.domain.dtos.ListTicketTicketTypeResponseDto;
-import com.devtiro.tickets.domain.entities.Ticket;
-import com.devtiro.tickets.domain.entities.TicketType;
+import com.tanmay.tickets.domain.dtos.GetTicketResponseDto;
+import com.tanmay.tickets.domain.dtos.ListTicketResponseDto;
+import com.tanmay.tickets.domain.dtos.ListTicketTicketTypeResponseDto;
+import com.tanmay.tickets.domain.entities.Ticket;
+import com.tanmay.tickets.domain.entities.TicketType;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;

@@ -1,12 +1,12 @@
 package com.tanmay.tickets.services.impl;
 
-import com.devtiro.tickets.domain.entities.QrCode;
-import com.devtiro.tickets.domain.entities.QrCodeStatusEnum;
-import com.devtiro.tickets.domain.entities.Ticket;
-import com.devtiro.tickets.exceptions.QrCodeGenerationException;
-import com.devtiro.tickets.exceptions.QrCodeNotFoundException;
-import com.devtiro.tickets.repositories.QrCodeRepository;
-import com.devtiro.tickets.services.QrCodeService;
+import com.tanmay.tickets.domain.entities.QrCode;
+import com.tanmay.tickets.domain.entities.QrCodeStatusEnum;
+import com.tanmay.tickets.domain.entities.Ticket;
+import com.tanmay.tickets.exceptions.QrCodeGenerationException;
+import com.tanmay.tickets.exceptions.QrCodeNotFoundException;
+import com.tanmay.tickets.repositories.QrCodeRepository;
+import com.tanmay.tickets.services.QrCodeService;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;

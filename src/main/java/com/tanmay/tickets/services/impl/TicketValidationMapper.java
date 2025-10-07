@@ -1,7 +1,7 @@
 package com.tanmay.tickets.services.impl;
 
-import com.devtiro.tickets.domain.dtos.TicketValidationResponseDto;
-import com.devtiro.tickets.domain.entities.TicketValidation;
+import com.tanmay.tickets.domain.dtos.TicketValidationResponseDto;
+import com.tanmay.tickets.domain.entities.TicketValidation;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;

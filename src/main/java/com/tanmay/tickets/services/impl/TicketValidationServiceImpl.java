@@ -1,12 +1,12 @@
 package com.tanmay.tickets.services.impl;
 
-import com.devtiro.tickets.domain.entities.*;
-import com.devtiro.tickets.exceptions.QrCodeNotFoundException;
-import com.devtiro.tickets.exceptions.TicketNotFoundException;
-import com.devtiro.tickets.repositories.QrCodeRepository;
-import com.devtiro.tickets.repositories.TicketRepository;
-import com.devtiro.tickets.repositories.TicketValidationRepository;
-import com.devtiro.tickets.services.TicketValidationService;
+import com.tanmay.tickets.domain.entities.*;
+import com.tanmay.tickets.exceptions.QrCodeNotFoundException;
+import com.tanmay.tickets.exceptions.TicketNotFoundException;
+import com.tanmay.tickets.repositories.QrCodeRepository;
+import com.tanmay.tickets.repositories.TicketRepository;
+import com.tanmay.tickets.repositories.TicketValidationRepository;
+import com.tanmay.tickets.services.TicketValidationService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
