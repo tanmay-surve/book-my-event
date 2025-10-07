@@ -1,3 +1,6 @@
+<img width="1920" height="1004" alt="Screenshot From 2025-10-07 11-30-20" src="https://github.com/user-attachments/assets/d75b69f2-a71e-47e0-9753-e475b80216f6" />
+
+
 ## Welcome to Book My Event 🌟
 Book My Event is a modern web application designed to streamline event management for organizers, attendees, and staff. Built with a robust tech stack combining Spring Boot and React, it offers a seamless and secure platform for creating, purchasing, and validating tickets.
 
