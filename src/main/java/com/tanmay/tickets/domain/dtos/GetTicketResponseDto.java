@@ -1,6 +1,6 @@
 package com.tanmay.tickets.domain.dtos;
 
-import com.devtiro.tickets.domain.entities.TicketStatusEnum;
+import com.tanmay.tickets.domain.entities.TicketStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

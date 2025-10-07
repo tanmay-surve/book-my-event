@@ -1,6 +1,6 @@
 package com.tanmay.tickets.domain.dtos;
 
-import com.devtiro.tickets.domain.entities.TicketValidationMethod;
+import com.tanmay.tickets.domain.entities.TicketValidationMethod;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
